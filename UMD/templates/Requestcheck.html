@@ -1,0 +1,44 @@
+{% extends 'base3.html' %}
+{% block content %}
+<link rel="stylesheet" href="./static/table.css">
+<style>
+    .discision a {
+        /* margin-top: 0.5; */
+        padding-top: 0.6vw;
+        display: inline-block;
+        width: 49%;
+        height: 2vw;
+        box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+        vertical-align: bottom;
+
+    }
+</style>
+<h2>Medicine Request</h2>
+<table>
+    <thead>
+        <th>Request_ID</th>
+        <th>User_ID</th>
+        <th>Medicine_Name</th>
+        <th>Medicine_Quantity</th>
+        <th>Decision</th>
+        <th>Medical Evidence</th>
+    </thead>
+    {% for d in data %}
+    <tr>
+        <td>{{d.request_id}}</td>
+        <td>{{d.user_id}}</td>
+        <td>{{d.medicine_name}}</td>
+        <td>{{d.medicine_quantity}}</td>
+        <td>
+            <div class="discision">
+                <a href="/approverequest?request_id={{d.request_id}}">Supply Medicines</a>
+                <a href="/rejectrequest?request_id={{d.request_id}}">Reject Proposal</a>
+            </div>
+        </td>
+        <td>
+            <a href={{d.image.url}}>{{d.user_id}}'s Prescription</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

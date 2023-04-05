@@ -1,0 +1,44 @@
+{% extends 'base2.html' %}
+{% block content %}
+<link rel="stylesheet" href="./static/login.css">
+<style>
+    .address {
+        width: 100%;
+        height: 40px;
+        margin: 5px;
+        margin-bottom: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        /* text-align: center; */
+    }
+    .message{
+        width: 100%;
+        /* text-align: center; */
+        margin: 20px;
+    }
+</style>
+<div class="wrapper">
+    <form class="p-3 mt-3" action="/medicine_donation" method="POST">
+    <!-- <form class="p-3 mt-3" method="POST" action='/login'> -->
+    {%csrf_token%}
+
+    <div class="form-field d-flex align-items-center"> <input type="text" name="medicine_name"
+            placeholder="Medicine Name">
+    </div>
+    <div class="form-field d-flex align-items-center"> <input type="number" name="medicine_quantity"
+            placeholder="Medicine Quantity">
+    </div>
+    <div class="form-field d-flex align-items-center"> <input type="date" name="expiry_date" placeholder="Expiry Date">
+    </div>
+    <div class="form-field d-flex align-items-center"> <input type="text" name="phone" placeholder="Phone No">
+    </div>
+    <div> <input class="address" type="textarea" name="address"
+            placeholder="Pickup Address">
+    </div>
+    <!-- <input class="btn mt-3" type="submit" value="medicine_donation"> -->
+    <input class="btn mt-3" type="submit" value="submit">
+</form>
+    <div class="message">{{msg}}</div>
+</div>
+{% endblock %}

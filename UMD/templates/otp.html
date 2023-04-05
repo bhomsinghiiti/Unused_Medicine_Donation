@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{msg}}
+<link rel="stylesheet" href="/static/otp.css">
+<div id="DivOne">
+    <form action="/otpfunc" method="POST">
+        {%csrf_token%}
+
+        <h3>Enter OTP sent to registered no.<br><br>
+            <input placeholder="Enter otp" required autofocus type="number" name="otp">
+        </h3>
+        <br>
+        <input type="submit" class="btn">
+    </form>
+
+</div>
+{% endblock %}

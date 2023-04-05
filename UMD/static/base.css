@@ -1,0 +1,210 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    /* background-color: black; */
+
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+nav {
+    background: rgb(17, 14, 14);
+    height: 48px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #2abc9f;
+    text-decoration: none;
+}
+
+.leftnav {
+    background: rgb(17, 14, 14);
+    height: 48px;
+    width: 100%;
+}
+
+label.logo {
+    color: white;
+    font-size: 30px;
+    line-height: 48px;
+    padding: 0 40px;
+    font-weight: 400;
+}
+
+label.logo span{
+    color: #2abc9f;
+}
+
+.leftnav li {
+    display: inline-block;
+    line-height: 48px;
+    margin: 0 5px;
+}
+
+.leftnav li a {
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 10px;
+    /* text-transform: uppercase; */
+    text-decoration: none;
+}
+
+nav ul {
+    float: right;
+    margin-right: 2opx;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 48px;
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 10px;
+    /* text-transform: uppercase; */
+    text-decoration: none;
+
+}
+
+.leftnav ul {
+    padding-left: 20px;
+}
+
+nav ul li a:hover {
+    color: rgb(216, 33, 33);
+}
+
+.leftnav ul li a:hover {
+    color: rgb(216, 33, 33);
+}
+
+.checkbtn {
+    font-size: 25px;
+    color: white;
+    float: right;
+    line-height: 50px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+.w3-row-padding img {
+    margin-bottom: 12px
+}
+
+#main {
+    margin-left: 5vw;
+    background-color: #bfc2c0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 48px;
+    z-index: -1;
+}
+
+@media(max-width:952px) {
+    .leftnav ul {
+        padding-left: 20px;
+    }
+
+    .leftnav li a {
+        font-size: 12px;
+        padding-left: 0px;
+    }
+
+    label.logo {
+        font-size: 20px;
+        padding-left: 20px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+/* about css */
+.about{
+    display: block;
+}
+.about .who{
+        text-align: center;
+    }
+   .about span{
+        color: #2abc9f;
+    }
+  .about img{
+       width: 50%;
+       float: left;
+       padding: 0.5%;
+       margin: 1%;
+       /* margin-right: 3%; */
+
+        /* box-shadow: 13px 13px 20px black, -13px -13px 20px #cbced1; */
+   }
+  .about .c{
+        margin: 1%;
+        width: 45%;
+        float: left;
+        padding: 0.5%;
+        font-size: 1.3vw;
+        margin-top: 20px;
+
+   }
+
+
+@media (max-width:858px) {
+    .checkbtn {
+        display: block;
+        color: white;
+    }
+
+    nav ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: black;
+        top: 48px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 20px 0;
+        line-height: 20px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    a:hover,
+    a.active {
+        background: none;
+        color: rgb(124, 219, 219);
+    }
+
+    #check:checked~ul {
+        left: 0;
+    }
+
+    .message {
+        color: indianred;
+    }
+
+}

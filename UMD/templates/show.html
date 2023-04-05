@@ -1,0 +1,46 @@
+{% extends 'base2.html' %}
+{% block content %}
+<link rel="stylesheet" href="./static/table.css">
+<h2>My donations</h2>
+<br>
+<table>
+    <!-- <caption>Your Denations</caption> -->
+    <thead>
+        <th>Status</th>
+        <th>Medicine Name</th>
+        <th>Medicine Quantity</th>
+        <th>Donation Date</th>
+        <th>Expiry Date</th>
+    </thead>
+    {% for i in d %}
+    <tr>
+        <td>{{i.status}}</td>
+        <td>{{i.medicine_name}}</td>
+        <td>{{i.medicine_quantity}}</td>
+        <td>{{i.donation_date}}</td>
+        <td>{{i.expiry_date}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<h2>My Requests</h2>
+<table>
+    <thead>
+        <th>Status</th>
+        <th>Medicine Name</th>
+        <th>Medicine Quantity</th>
+        <th>Request Date</th>
+    </thead>
+    <br>
+    {% for i in r %}
+    <tr>
+        <td>{{i.status}}</td>
+        <td>{{i.medicine_name}}</td>
+        <td>{{i.medicine_quantity}}</td>
+        <td>{{i.request_date}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock%}
+
+</html>

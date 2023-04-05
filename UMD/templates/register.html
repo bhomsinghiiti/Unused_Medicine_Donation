@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+<link rel="stylesheet" href="static/login.css">
+<!-- <style>
+    #file{
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+        margin-left: 4vw;
+    }
+</style> -->
+<div class="wrapper">
+    <form class="p-3 mt-3" action="/send" method="POST">
+        {%csrf_token%}
+        <div class="form-field d-flex align-items-center">
+            <input required autofocus type="text" name="user_id" placeholder="User ID">
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <input required autofocus type="text" name="name" placeholder="Name">
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <input required autofocus type="text" name="address" placeholder="Address">
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <input required autofocus type="text" name="email" placeholder="Email ID">
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <input required autofocus type="text" name="phone" placeholder="Phone No.">
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <input required autofocus type="text" name="adhaar" placeholder="Aadhaar No.">
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <input required autofocus type="text" name="pass1" placeholder="Password">
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <input required autofocus type="text" name="pass2" placeholder="Confirm Password">
+        </div>
+        <!-- <input type="image" name="imag" id="file" placeholder="Profile Photo"> -->
+        <input class="btn mt-3" type="submit" value="Register">
+        <div class="message">{{msg}}</div>
+    </form>
+
+</div>
+{% endblock %}
